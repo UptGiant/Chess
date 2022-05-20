@@ -1,60 +1,61 @@
 #include <iostream>
-#include<windows.h>
+#include <string>
+#include <windows.h>
 
 using namespace std;
 string board[9][9];
 
+/*
+This function will be used to place every chess piece in their correct starting position.
+It will also be used to reset the board when the game is over and the user wants to play again.
+Returns void
+*/
+
 void resetBoard(){
     int setterNum=57;
     int setterABC=73;
-    board[0][0]="";
     int i;
-    for(i=9;i>0;i--){
+    board[8][0]=" ";
+    for(i=7;i>=0;i--){
         setterNum=setterNum-1;
         board[i][0]=setterNum;
-        cout<<board[i][0];
+        //cout<<board[i][0];
     }
-        for(i=9;i>0;i--){
+        for(i=8;i>0;i--){
         setterABC=setterABC-1;
-        board[9][i]=setterABC;
-        cout<<board[9][i];
+        board[8][i]=setterABC;
+        //cout<<board[8][i];
     }
 
     
 
 }
 
-
+/*
+This function will display the coordinates for move making as well as display the chess pieces
+Returns void
+*/
 void displayBoard(){
-    	/* for(i = 0; i <strlen(first_string)+2;i++){
-		for(j = 0; j< strlen(second_string)+2; j++){
-			if(i == 0){
-				if(j < 2){
-					printf("   |");
-				}else{
-					printf("  %c|",second_string[j-2]);
-				}
-			}
-			else if(i == 1){
-				if(j == 0){
-					printf("   |");
-				}
-				else{
-					printf("%3d|",arr[i - 1][j -1]);
-				}
-			}
-			else if(i > 1){
-				if(j == 0){
-					printf("  %c|",first_string[i-2]);
-				}
-				else{
-					printf("%3d|",arr[i - 1][j -1]);
-				}
-			}
-		}
-		printf("\n");
+    int i,j;
+    	for(i = 0; i <9;i++){
+            cout<<"\t";
+            for(j = 0; j< 9; j++){
+                if(j==0){
+                    cout<<""<<board[i][j]<<"|";
 
-	} */
+                }else{
+                    cout<<""<<board[i][j]<<"\t|";
+                }
+                
+		}
+        if(i!=8){
+            cout<<"\n      ----";
+            for(j=0;j<10;j++){
+            cout<<"------";
+            }
+            cout<<"----\n";   
+        }
+	}
 }
 
 
