@@ -12,12 +12,12 @@ Returns void
 */
 
 void resetBoard(){
-    int setterNum=57;
+    int setterNum=48;
     int setterABC=73;
     int i;
     board[8][0]=" ";
     for(i=7;i>=0;i--){
-        setterNum=setterNum-1;
+        setterNum=setterNum+1;
         board[i][0]=setterNum;
         //cout<<board[i][0];
     }
@@ -91,9 +91,6 @@ If a tie occurs it will re-roll*/
     }
     }
 
-
-
-   
 }
 
 
